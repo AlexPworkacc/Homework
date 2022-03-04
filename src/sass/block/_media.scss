@@ -1,0 +1,106 @@
+@media ( max-width:  767px) {
+    .header {
+        &__logo {
+            width: 190px;
+        }
+        &__phone {
+            font-size: 16px;
+        }
+    }
+}
+@media ( max-width:  575px) {
+    .promo {
+        &__wrapper {
+            align-items: center;
+        }
+        &__header {
+            font-size: 32px;
+        }
+        &__subheader {
+            font-size: 18px;
+        }
+        &__icons {
+            width: 380px;
+        }
+        .button {
+            &_main{
+            width: 250px;
+            height: 40px;
+            font-size: 15px;
+            }
+        }
+    }
+    .benefit {
+        .subheader {
+            font-size: 24px;
+        }
+        &__items {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__item {
+            &:nth-child(2) {
+                margin: 20px 0;
+            }
+            h3 {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 360px) {
+    .header {
+        &__logo {
+            width: 190px;
+            img {
+                width: 85%;
+            }
+        }
+        &__official {
+            display: none;
+        }
+        .button {
+            width: 130px;
+            height: 25px;
+            font-size: 11px;
+        }
+    }
+    .promo {
+        &__wrapper {
+            align-items: center;
+        }
+        &__header {
+            font-size: 26px;
+        }
+        &__subheader {
+            font-size: 15px;
+        }
+        &__icons {
+            width: 330px;
+        }
+        .button {
+            &_main{
+            width: 250px;
+            height: 40px;
+            font-size: 15px;
+            }
+        }
+    }
+    .benefit {
+        .subheader {
+            font-size: 24px;
+        }
+        &__items {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__item {
+            &:nth-child(2) {
+                margin: 20px 0;
+            }
+            h3 {
+                margin-top: 10px;
+            }
+        }
+    }
+}
