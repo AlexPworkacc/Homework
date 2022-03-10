@@ -1,3 +1,13 @@
+@media ( max-width:  991px) {
+    .carousel {
+        &__inner {
+            img {
+                width: 700px;
+            }
+        }
+    }
+}
+
 @media ( max-width:  767px) {
     .header {
         &__logo {
@@ -7,6 +17,19 @@
             font-size: 16px;
         }
     }
+
+    .title_left {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .consultation {
+        &__descr {
+            text-align: center;
+        }
+    }
+
+
 }
 @media ( max-width:  575px) {
     .promo {
@@ -16,7 +39,7 @@
         &__header {
             font-size: 32px;
         }
-        &__subheader {
+        &__title {
             font-size: 18px;
         }
         &__icons {
@@ -31,7 +54,7 @@
         }
     }
     .benefit {
-        .subheader {
+        .title {
             font-size: 24px;
         }
         &__items {
@@ -46,6 +69,16 @@
                 margin-top: 10px;
             }
         }
+    }
+
+    .consultation {
+        &__descr {
+            text-align: center;
+        }
+    }
+
+    .feed-form {
+        margin: 36px auto 0 auto;
     }
 }
 @media (max-width: 360px) {
@@ -72,7 +105,7 @@
         &__header {
             font-size: 26px;
         }
-        &__subheader {
+        &__title {
             font-size: 15px;
         }
         &__icons {
@@ -87,7 +120,7 @@
         }
     }
     .benefit {
-        .subheader {
+        .title {
             font-size: 24px;
         }
         &__items {
@@ -103,4 +136,6 @@
             }
         }
     }
+
+    
 }
