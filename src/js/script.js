@@ -30,4 +30,47 @@ $(document).ready(function() {
 
     toggleSlider('.catalog-item__link');
     toggleSlider('.catalog-item__back');
+
+    //Modal
+
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+    $('.modal__close').on('click', function() {
+        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+    });
+
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__descr').text($('.catalog-item__title').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        })
+    })
+
+    function valideForm(form) {
+        $(form).validate({
+            rules: {
+                name: "required",
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: "Имя",
+                phone: "Номер, ёпта",
+                email: {
+                    required: "Почту, блять!",
+                    email: "Тупой?!"
+                }
+            }
+        });
+    }
+
+    valideForm('#order form');
+    valideForm('#consultation form');
+    valideForm('#consultation-form');
+
+    $('input[name=phone]').mask('+7 (999) 999-99-99');
 });
