@@ -47,6 +47,8 @@ $(document).ready(function() {
         })
     })
 
+    //Validation form
+
     function valideForm(form) {
         $(form).validate({
             rules: {
@@ -72,5 +74,51 @@ $(document).ready(function() {
     valideForm('#consultation form');
     valideForm('#consultation-form');
 
+    //mask numder
+
     $('input[name=phone]').mask('+7 (999) 999-99-99');
+
+    //push form
+
+    $('form').submit(function(e) {
+        e.preventDefault();
+        
+        if(!$(this).valid()) {
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+
+            $('form').trigger('reset');
+        });
+        return false;
+    });
+
+    //smooth scroll and pageup
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+
+    $("a").on('click', function(event) {
+        if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+        window.location.hash = hash;
+        });
+        } 
+    });
 });

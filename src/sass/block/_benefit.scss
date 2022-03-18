@@ -27,5 +27,29 @@
     &__link {
         color: $main-color
     }
+    &__icon {
+        cursor: pointer;
+        &_animated {
+            animation: heartbeat 1.5s infinite;
+            animation-timing-function: ease-out;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+        &_jump {
+            animation: jump 1.5s infinite;
+            animation-timing-function: ease-out;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+        &_step {
+            animation: step 1.5s infinite;
+            animation-timing-function: ease-out;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+    }
 }
     
